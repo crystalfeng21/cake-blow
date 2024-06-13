@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let analyser;
   let microphone;
 
-  const candle_coor = [[105,-20], [115,-20], [125, -20], [135, -20], [ 145,-20],
-  [105,50], [115,50], [125, 50], [135, 50],[145,50],[125, 0],[125, 20],[125, 40]];
+  const candle_coor = [[75,-18], [85,-18], [95, -18], [105, -18], [ 115,-18],
+  [75,58], [85,58],[95, 0],[95, 20], [95, 40],[95, 58], [105, 58],[115,58],[135,-18], [145,-18], [155, -18], [165, -18], [ 175,-18],
+  [135,0], [145,20],[135, 20],[135, 40], [135, 58],[155, 20], [165, 20],[175,20],];
 
   for (let [left, top] of candle_coor) {
       addCandle(left, top);
@@ -50,7 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let sum = 0;
     for (let i = 0; i < bufferLength; i++) {
-      sum += dataArray[i];
+      if(dataArray[i] < 200){
+        sum += dataArray[i];
+      }
+      
     }
     let average = sum / bufferLength;
 
