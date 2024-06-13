@@ -6,11 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
   let analyser;
   let microphone;
 
+  const candle_coor = [[105,-20], [115,-20], [125, -20], [135, -20], [ 145,-20],
+  [105,50], [115,50], [125, 50], [135, 50],[145,50],[125, 0],[125, 20],[125, 40]];
+
+  for (let [left, top] of candle_coor) {
+      addCandle(left, top);
+  }
+
   function updateCandleCount() {
-    const activeCandles = candles.filter(
-      (candle) => !candle.classList.contains("out")
-    ).length;
-    candleCountDisplay.textContent = activeCandles;
+    // const activeCandles = candles.filter(
+    //   (candle) => !candle.classList.contains("out")
+    // ).length;
+    // candleCountDisplay.textContent = activeCandles;
   }
 
   function addCandle(left, top) {
@@ -28,11 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCandleCount();
   }
 
-  cake.addEventListener("click", function (event) {
+  document.getElementById("clickable").addEventListener("click", function (event) {
     const rect = cake.getBoundingClientRect();
     const left = event.clientX - rect.left;
     const top = event.clientY - rect.top;
     addCandle(left, top);
+    console.log(left, top);
   });
 
   function isBlowing() {

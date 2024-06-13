@@ -17,6 +17,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   border: 2px solid #553C13;
+  scale: 1.4;
 }
 
 .candle-count-display span {
@@ -28,10 +29,12 @@ body {
   position: absolute;
   width: 250px;
   height: 200px;
-  top: 50%;
+  top: 65%;
   left: 50%;
   margin-top: -70px;
   margin-left: -125px;
+
+  scale: 1.4;
 }
 
 .plate {
@@ -132,6 +135,7 @@ body {
   left: 50%;
   margin-left: -8px;
   z-index: 10;
+  scale: calc(1/1.4);
 }
 .candle:before {
   content: "";
@@ -161,6 +165,7 @@ body {
   box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
   transform-origin: 50% 90%;
   animation: flicker 1s ease-in-out alternate infinite;
+  scale: calc(1/1.4);
 }
 
 @keyframes flicker {
