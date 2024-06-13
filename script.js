@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let sum = 0;
     for (let i = 0; i < bufferLength; i++) {
-      if(dataArray[i] < 100){
+      if(dataArray[i] < 150){
         sum += dataArray[i];
       }
       
